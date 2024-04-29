@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+
 
 const Footer = () => {
   return (
     <div className="text-white">
-      <footer className="footer p-10 bg-gray-700 text-base-content">
+      <footer className="footer p-10 bg-gray-800 text-base-content">
         <aside>
           <div className="flex items-center justify-center gap-2">
             <img
@@ -23,7 +25,12 @@ const Footer = () => {
             <br />A trust worthy Company serving since 2020.
           </p>
           <p className="text-white text-lg font-semibold">Follow Us:</p>
-          <div></div>
+          <div className="flex text-2xl text-green-600 gap-4 items-center justify-center">
+          <a className="link link-hover"><FaFacebook /></a>
+          <a className="link link-hover"><FaTwitter/></a>
+          <a className="link link-hover"><FaInstagram/></a>
+          <a className="link link-hover"><FaGithub/></a>
+          </div>
         </aside>
         <nav>
           <h6 className="footer-title text-white">Services</h6>
