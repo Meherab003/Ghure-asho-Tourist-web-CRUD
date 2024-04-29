@@ -4,7 +4,18 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const NavBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    //logout
+    logOut()
+    .then(() => {
+      console.log("User Logged Out")
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   const navLinks = (
     <>
@@ -31,7 +42,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-gray-900 bg-opacity-70 fixed text-white z-[5] py-3">
+    <nav className="navbar bg-gray-900 bg-opacity-70 fixed text-white z-[5] py-3 md:px-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,12 +83,35 @@ const NavBar = () => {
         <ul className="flex gap-10 px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <Link
-          to="/login"
-          className="btn btn-sm md:btn-md bg-green-600 border-none text-white"
-        >
-          Login
-        </Link>
+        {/* login And Logout toogle */}
+
+        {user ? (
+          <div className="dropdown dropdown-end">
+            {
+              user?.photoURL? <img src={user.photoURL} tabIndex={0} role="button" className="btn btn-circle btn-md bg-green-600 border-none"/>
+              :
+              <img src="https://i.ibb.co/f0phPhH/icons8-user-96.png" tabIndex={0} role="button" className="btn btn-circle btn-md bg-green-600 border-none"/>
+            }
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[10] menu p-2 shadow bg-gray-700 bg-opacity-70 rounded-box w-52"
+            >
+              <li>
+                <a>{user?.displayName}</a>
+              </li>
+              <li>
+                <button onClick={handleLogOut} className="bg-red-600 text-center">Log Out</button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link
+            to="/login"
+            className="btn btn-sm md:btn-md bg-green-600 border-none text-white"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </nav>
   );

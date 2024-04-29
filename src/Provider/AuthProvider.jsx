@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
@@ -51,6 +52,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, gitHubProvider);
   };
 
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth)
+  }
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("Currently signed in user", currentUser);
@@ -68,6 +74,7 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogin,
     userUpdate,
+    logOut
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
