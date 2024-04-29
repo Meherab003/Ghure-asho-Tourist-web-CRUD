@@ -9,7 +9,7 @@ const NavBar = () => {
         <li><NavLink className='p-1 text-white' to='/myList'>My List</NavLink></li>
     </>;
   return (
-    <nav className="navbar bg-gray-900 bg-opacity-70 fixed text-white">
+    <nav className="navbar bg-gray-900 bg-opacity-70 fixed text-white z-[5]">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

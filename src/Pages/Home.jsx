@@ -1,20 +1,11 @@
+import Banner from "../Components/Banner";
+import PopularSpots from "../Components/PopularSpots";
+
 const Home = () => {
     return (
         <div>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
-            <h2 className="text-6xl">Home</h2>
+            <Banner></Banner>
+            <PopularSpots></PopularSpots>
         </div>
     );
 };
