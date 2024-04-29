@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
-    const {userLogin} = useContext(AuthContext);
+    const {userLogin , googleLogin, githubLogin} = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -15,6 +15,29 @@ const Login = () => {
 
         //user login
         userLogin(email, password)
+        .then(res => {
+            console.log(res.user)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    
+    }
+    const handleGoogleLogin = () => {
+        //google user login
+        googleLogin()
+        .then(res => {
+            console.log(res.user)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        
+    }
+
+    const handleGithubLogin = () => {
+        //github user login
+        githubLogin()
         .then(res => {
             console.log(res.user)
         })
@@ -66,13 +89,13 @@ const Login = () => {
           </form>
           <div className="card-body flex flex-col md:flex-row items-center justify-center pt-0">
             <div className="w-full md:w-1/2">
-              <button className="btn btn-outline w-full">
+              <button onClick={handleGoogleLogin} className="btn btn-outline w-full">
                 <FaGoogle className=" md:text-lg" />
                 Google Login
               </button>
             </div>
             <div className="w-full md:w-1/2">
-              <button className="btn btn-outline w-full">
+              <button onClick={handleGithubLogin} className="btn btn-outline w-full">
                 <FaGithub className="md:text-lg" />
                 Github Login
               </button>
