@@ -19,7 +19,8 @@ import TouristSpotsDatils from "../Pages/TouristSpotsDatils";
       children: [
         {
             path: '/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch("http://localhost:5000/spots")
         },
         {
           path: '/login',
@@ -41,7 +42,7 @@ import TouristSpotsDatils from "../Pages/TouristSpotsDatils";
         {
           path: '/touristSpots/:id',
           element: <TouristSpotsDatils></TouristSpotsDatils>,
-          loader: () => fetch(`http://localhost:5000/spots`)
+          loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
         }
       ]
     },

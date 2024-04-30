@@ -25,9 +25,23 @@ const TouristSpotCard = ({ spot }) => {
         <img className="object-cover w-full h-full" src={photo} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-2xl lg:text-3xl font-medium flex flex-col justify-start items-start">{name} <span className="text-sm flex gap-1 items-center font-light"><BiWorld /> {country}</span></h2>
-        <p className="font-medium">{description}</p>
         <div>
+        <h2 className="card-title text-2xl lg:text-3xl font-medium flex flex-col justify-start items-start">{name} <span className="text-sm flex gap-1 items-center font-light"><BiWorld /> {country}</span></h2>
+        {description.length > 100 ? (
+          <p>
+            {description.slice(0, 100)}{" "}
+            <Link
+              className="font-semibold text-black hover:underline hover:text-blue-900"
+              to={`/spot/${_id}`}
+            >
+              Read More...
+            </Link>
+          </p>
+        ) : (
+          <p className="font-medium text-gray-700">{description}</p>
+        )}
+        </div>
+        <div className="flex-grow">
           <div className="grid grid-cols-2 font-semibold">
             <p className="flex items-center gap-2">
               <FaUsers />
