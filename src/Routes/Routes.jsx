@@ -9,6 +9,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import TouristsSpot from "../Pages/TouristsSpot";
 import AddSpots from "../Pages/AddSpots";
+import TouristSpotsDatils from "../Pages/TouristSpotsDatils";
 
   const router = createBrowserRouter([
     {
@@ -30,11 +31,17 @@ import AddSpots from "../Pages/AddSpots";
         },
         {
           path: '/touristSpots',
-          element: <PrivateRoute><TouristsSpot></TouristsSpot></PrivateRoute>
+          element: <PrivateRoute><TouristsSpot></TouristsSpot></PrivateRoute>,
+          loader:() => fetch('http://localhost:5000/spots')
         },
         {
           path: '/addSpots',
           element: <PrivateRoute><AddSpots></AddSpots></PrivateRoute>
+        },
+        {
+          path: '/touristSpots/:id',
+          element: <TouristSpotsDatils></TouristSpotsDatils>,
+          loader: () => fetch(`http://localhost:5000/spots`)
         }
       ]
     },

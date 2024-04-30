@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2'
+
+
 const AddSpots = () => {
 
     const handleAddSpot = e => {
@@ -26,9 +29,13 @@ const AddSpots = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            // if(data.insertedId){
-            //     console.log("data successfully inserted")
-            // }
+            if(data.insertedId){
+                Swal.fire({
+                    title: "Done!",
+                    text: "User Successfully LogOut!",
+                    icon: "success"
+                  });
+            }
         })
     };
   return (

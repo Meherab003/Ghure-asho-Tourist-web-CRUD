@@ -5,15 +5,17 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
 
   if (loading) {
-    return <span className="loading loading-spinner text-success"></span>;
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <span className="loading loading-spinner loading-md lg:loading-lg text-success"></span>
+      </div>
+    );
   }
 
-  if(user){
+  if (user) {
     return children;
   }
-  return (
-    <h2>please login</h2>
-  );
+  return <h2>please login</h2>;
 };
 
 PrivateRoute.propTypes = {
