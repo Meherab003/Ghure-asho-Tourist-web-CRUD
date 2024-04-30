@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const {userLogin , googleLogin, githubLogin} = useContext(AuthContext);
@@ -17,9 +18,20 @@ const Login = () => {
         userLogin(email, password)
         .then(res => {
             console.log(res.user)
+            Swal.fire({
+                title: "Great!",
+                text: "User Successfully Logged in!",
+                icon: "success"
+              });
         })
         .catch(err => {
             console.log(err)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: err.message,
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         })
     
     }
@@ -28,9 +40,20 @@ const Login = () => {
         googleLogin()
         .then(res => {
             console.log(res.user)
+            Swal.fire({
+                title: "Great!",
+                text: "User Successfully Logged in!",
+                icon: "success"
+              });
         })
         .catch(err => {
             console.log(err)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: err.message,
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         })
         
     }
@@ -40,15 +63,26 @@ const Login = () => {
         githubLogin()
         .then(res => {
             console.log(res.user)
+            Swal.fire({
+                title: "Great!",
+                text: "User Successfully Logged in!",
+                icon: "success"
+              });
         })
         .catch(err => {
             console.log(err)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: err.message,
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         })
     }
 
   return (
     <div className="hero min-h-screen bg-base-200 ">
-      <div className="hero-content md:w-1/2 flex-col mt-14">
+      <div className="hero-content w-[95%] md:w-1/2 flex-col mt-14">
         <div className="text-center">
           <h1 className="text-5xl font-bold">Login now!</h1>
         </div>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const SignUp = () => {
     const {createUser, userUpdate} = useContext(AuthContext);
@@ -21,19 +22,36 @@ const SignUp = () => {
             userUpdate(name, photo)
             .then(() => {
                 console.log("Profile Updated")
+                Swal.fire({
+                    title: "Great!",
+                    text: "User Successfully Create!",
+                    icon: "success"
+                  });
             })
             .catch(err => {
                 console.log(err)
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err.message,
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                  });
             })
         })
         .catch(err => {
             console.log(err)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: err.message,
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         })
     }
 
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content md:w-1/2 flex-col mt-14">
+      <div className="hero-content w-[95%] md:w-1/2 flex-col mt-14">
         <div className="text-center">
           <h1 className="text-5xl font-bold">Sign Up now!</h1>
         </div>

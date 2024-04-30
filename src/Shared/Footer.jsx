@@ -55,7 +55,7 @@ const Footer = () => {
       </footer>
       <footer className="footer footer-center p-4 bg-gray-900 text-base-content">
         <aside>
-          <p className="text-white">Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+          <p className="text-white">Copyright © 2024 - All right reserved by Meherab Hossain Ltd</p>
         </aside>
       </footer>
     </div>
