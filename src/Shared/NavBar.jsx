@@ -2,32 +2,37 @@ import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut,setDarkMode, darkMode } = useContext(AuthContext);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   const handleLogOut = () => {
     //logout
     logOut()
-    .then(() => {
-      console.log("User Logged Out")
-      Swal.fire({
-        title: "Done!",
-        text: "User Successfully LogOut!",
-        icon: "success"
+      .then(() => {
+        console.log("User Logged Out");
+        Swal.fire({
+          title: "Done!",
+          text: "User Successfully LogOut!",
+          icon: "success",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err.message,
+          footer: '<a href="#">Why do I have this issue?</a>',
+        });
       });
-    })
-    .catch(err => {
-      console.log(err)
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: err.message,
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
-    })
-  }
+  };
 
   const navLinks = (
     <>
@@ -94,36 +99,59 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-10 px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end">
-        {/* login And Logout toogle */}
+      <div className="navbar-end gap-2 md:gap-5">
+      <button
+        onClick={toggleDarkMode}
+        className="text-2xl p-2 text-white bg-black dark:text-black dark:bg-white rounded-full"
+      >
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </button>
+        <div>
+          {/* login And Logout toogle */}
 
-        {user ? (
-          <div className="dropdown dropdown-end">
-            {
-              user?.photoURL? <img src={user.photoURL} tabIndex={0} role="button" className="btn btn-circle btn-md bg-green-600 border-none"/>
-              :
-              <img src="https://i.ibb.co/f0phPhH/icons8-user-96.png" tabIndex={0} role="button" className="btn btn-circle btn-md bg-green-600 border-none"/>
-            }
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[10] menu p-2 shadow bg-gray-700 bg-opacity-70 rounded-box w-52"
+          {user ? (
+            <div className="dropdown dropdown-end">
+              {user?.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-circle btn-md bg-green-600 border-none"
+                />
+              ) : (
+                <img
+                  src="https://i.ibb.co/f0phPhH/icons8-user-96.png"
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-circle btn-md bg-green-600 border-none"
+                />
+              )}
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[10] menu p-2 shadow bg-gray-700 bg-opacity-70 rounded-box w-52"
+              >
+                <li>
+                  <a>{user?.displayName}</a>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="bg-red-600 text-center"
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="btn btn-sm md:btn-md bg-green-600 border-none text-white"
             >
-              <li>
-                <a>{user?.displayName}</a>
-              </li>
-              <li>
-                <button onClick={handleLogOut} className="bg-red-600 text-center">Log Out</button>
-              </li>
-            </ul>
-          </div>
-        ) : (
-          <Link
-            to="/login"
-            className="btn btn-sm md:btn-md bg-green-600 border-none text-white"
-          >
-            Login
-          </Link>
-        )}
+              Login
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );

@@ -20,6 +20,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   //Google and Github Providers
   const googleProvider = new GoogleAuthProvider();
@@ -74,7 +75,9 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogin,
     userUpdate,
-    logOut
+    logOut,
+    darkMode,
+    setDarkMode
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
