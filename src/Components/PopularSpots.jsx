@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import TouristSpotCard from "./TouristSpotCard";
 import { AuthContext } from "../Provider/AuthProvider";
+import PropTypes from "prop-types";
 
 const PopularSpots = ({ spots }) => {
     const {darkMode} = useContext(AuthContext)
@@ -17,11 +18,15 @@ const PopularSpots = ({ spots }) => {
         you want see the wonders of the place the culture
       </p>
       {/* cards */}
-      <div className="grid gird-cols-1 md:gird-cols-2 lg:grid-cols-3 gap-10 mt-10 pb-10">
+      <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 pb-10">
        { spots.slice(0,6).map(spot => <TouristSpotCard key={spot._id} spot={spot}></TouristSpotCard>)}
       </div>
     </div>
   );
 };
+
+PopularSpots.propTypes = {
+  spots: PropTypes.array,
+}
 
 export default PopularSpots;

@@ -11,3 +11,6 @@
 li :active{
   background-color: green;
 }
+*{
+  @apply transition-colors duration-75;
+}

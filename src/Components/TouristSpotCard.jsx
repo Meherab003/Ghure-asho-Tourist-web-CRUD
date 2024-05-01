@@ -24,7 +24,7 @@ const TouristSpotCard = ({ spot }) => {
   } = spot;
   return (
     <div className={`${darkMode && "dark"}`}>
-      <div className="card border card-compact dark:bg-slate-900 bg-base-100 shadow-xl">
+      <div className="card border card-compact dark:bg-slate-900 bg-base-100 dark:hover:bg-slate-800 shadow-xl">
         <figure className="h-64">
           <img className="object-cover w-full h-full" src={photo} alt="Shoes" />
         </figure>

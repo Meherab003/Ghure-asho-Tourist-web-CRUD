@@ -20,7 +20,12 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [Fetch, setFetch] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+
+  const Refetch = () => {
+    setFetch(!Fetch);
+  };
 
   //Google and Github Providers
   const googleProvider = new GoogleAuthProvider();
@@ -55,17 +60,22 @@ const AuthProvider = ({ children }) => {
 
   const logOut = () => {
     setLoading(true);
-    return signOut(auth)
-  }
+    return signOut(auth);
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("Currently signed in user", currentUser);
-      setUser(currentUser);
-      setLoading(false);
+      if (currentUser) {
+        setUser(currentUser);
+        setLoading(false);
+      }
+      else{
+        setUser(null)
+        setLoading(false)
+      }
     });
     return () => unSubscribe();
-  }, []);
+  }, [Fetch]);
 
   const userInfo = {
     createUser,
@@ -77,7 +87,8 @@ const AuthProvider = ({ children }) => {
     userUpdate,
     logOut,
     darkMode,
-    setDarkMode
+    setDarkMode,
+    Refetch,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
