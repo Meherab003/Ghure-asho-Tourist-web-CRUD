@@ -4,9 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { Tooltip } from "react-tooltip";
 
 const NavBar = () => {
-  const { user, logOut,setDarkMode, darkMode } = useContext(AuthContext);
+  const { user, logOut, setDarkMode, darkMode } = useContext(AuthContext);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -100,17 +101,22 @@ const NavBar = () => {
         <ul className="flex gap-10 px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end gap-2 md:gap-5">
-      <button
-        onClick={toggleDarkMode}
-        className="text-2xl p-2 text-white bg-black dark:text-black dark:bg-white rounded-full"
-      >
-        {darkMode ? <FaSun /> : <FaMoon />}
-      </button>
+        <button
+          onClick={toggleDarkMode}
+          className="text-2xl p-2 text-white bg-black dark:text-black dark:bg-white rounded-full"
+        >
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
         <div>
           {/* login And Logout toogle */}
 
           {user ? (
-            <div className="dropdown dropdown-end">
+            <div
+              className="dropdown dropdown-end"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={user?.displayName}
+              data-tooltip-place="bottom"
+            >
               {user?.photoURL ? (
                 <img
                   src={user.photoURL}
@@ -153,6 +159,7 @@ const NavBar = () => {
           )}
         </div>
       </div>
+      <Tooltip id="my-tooltip" />
     </nav>
   );
 };
