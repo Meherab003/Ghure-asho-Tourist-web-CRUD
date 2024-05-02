@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 const Login = () => {
     const {userLogin , googleLogin, githubLogin} = useContext(AuthContext);
+    const location =  useLocation(); 
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -23,6 +25,8 @@ const Login = () => {
                 text: "User Successfully Logged in!",
                 icon: "success"
               });
+           //Navigate after login
+           navigate(location?.state ? location.state : '/' )   
         })
         .catch(err => {
             console.log(err)
@@ -45,6 +49,7 @@ const Login = () => {
                 text: "User Successfully Logged in!",
                 icon: "success"
               });
+              navigate(location?.state ? location.state : '/' )   
         })
         .catch(err => {
             console.log(err)
@@ -68,6 +73,7 @@ const Login = () => {
                 text: "User Successfully Logged in!",
                 icon: "success"
               });
+              navigate(location?.state ? location.state : '/' )   
         })
         .catch(err => {
             console.log(err)

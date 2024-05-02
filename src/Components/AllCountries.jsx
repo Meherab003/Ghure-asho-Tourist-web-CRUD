@@ -8,7 +8,7 @@ const AllCountries = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/countries")
+      .get("https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/countries")
       .then((data) => setCountries(data.data));
   }, []);
   const [text] = useTypewriter({

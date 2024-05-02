@@ -32,26 +32,7 @@ const UpdateSpot = () => {
       visitor,
     };
 
-    // fetch("http://localhost:5000/spots", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(newSpot),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if (data.insertedId) {
-    //       Swal.fire({
-    //         title: "Done!",
-    //         text: "User Successfully LogOut!",
-    //         icon: "success",
-    //       });
-    //     }
-    //   });
-
-    fetch(`http://localhost:5000/spots/${loadedSpot._id}`, {
+    fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots/${loadedSpot._id}`, {
       method: "PUT",
       headers: {
         "content-type" : "application/json",
@@ -60,6 +41,7 @@ const UpdateSpot = () => {
     })
     .then(res => res.json())
     .then(data => {
+      console.log(data)
       Swal.fire({
                 title: "Done!",
                 text: "Spot Updated Successfully!",

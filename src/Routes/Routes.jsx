@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/spots"),
+        loader: () => fetch("https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots"),
       },
       {
         path: "/login",
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             <TouristsSpot></TouristsSpot>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/spots"),
+        loader: () => fetch("https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots"),
       },
       {
         path: "/addSpots",
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         path: "/touristSpots/:id",
         element: <TouristSpotsDatils></TouristSpotsDatils>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spots/${params.id}`),
+          fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots/${params.id}`),
       },
       {
         path: "/myList",
@@ -70,12 +70,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spots/${params.id}`),
+          fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots/${params.id}`),
       },
       {
         path: "/touristSpots/countries/:countryName",
         element: <CountrySpots></CountrySpots>,
-        loader:({params}) => fetch(`http://localhost:5000/touristSpots/countries/${params.countryName}`)
+        loader:({params}) => fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/touristSpots/countries/${params.countryName}`)
       },
     ],
   },

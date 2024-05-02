@@ -13,7 +13,7 @@ const MyList = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/mylist/${user.email}`)
+      .get(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/mylist/${user.email}`)
       .then((data) => setAddedSpots(data.data));
   }, []);
 
@@ -30,7 +30,7 @@ const MyList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // console.log("de")
-        fetch(`http://localhost:5000/spots/${_id}`, {
+        fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

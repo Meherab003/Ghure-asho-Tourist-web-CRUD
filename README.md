@@ -1,8 +1,11 @@
-# React + Vite
+<h1>Website Name: Ghure Asho</h1>
+<h3>Live Link: https://ghure-asho.web.app/</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<hr/>
+<h3>NPM Packages:</h3>
 
-Currently, two official plugins are available:
+- Swiper JS
+- React icons (Optional)
+- React Tooltip
+- React Simple TypeWritter.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

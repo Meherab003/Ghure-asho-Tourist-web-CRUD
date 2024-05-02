@@ -11,7 +11,7 @@ const CountrySpots = () => {
     const [countrySpots, setCountryspots] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/spots/country/${Country.country}`)
+        axios.get(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots/country/${Country.country}`)
         .then(data => setCountryspots(data.data))
     }, [])
 
