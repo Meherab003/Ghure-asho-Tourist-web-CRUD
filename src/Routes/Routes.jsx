@@ -10,6 +10,7 @@ import AddSpots from "../Pages/AddSpots";
 import TouristSpotsDatils from "../Pages/TouristSpotsDatils";
 import MyList from "../Pages/MyList";
 import UpdateSpot from "../Pages/UpdateSpot";
+import CountrySpots from "../Pages/CountrySpots";
 
 const router = createBrowserRouter([
   {
@@ -68,7 +69,13 @@ const router = createBrowserRouter([
             <UpdateSpot></UpdateSpot>
           </PrivateRoute>
         ),
-        loader:({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/spots/${params.id}`),
+      },
+      {
+        path: "/touristSpots/countries/:countryName",
+        element: <CountrySpots></CountrySpots>,
+        loader:({params}) => fetch(`http://localhost:5000/touristSpots/countries/${params.countryName}`)
       },
     ],
   },

@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const PopularSpots = ({ spots }) => {
     const {darkMode} = useContext(AuthContext)
     // console.log(darkMode)
-  console.log(spots);
+  // console.log(spots);
   return (
     <div className={`w-11/12 mx-auto ${darkMode && 'dark'} dark:bg-slate-900`}>
       <h2 className="my-5 text-3xl md:text-5xl text-center font-semibold dark:text-white">

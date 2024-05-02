@@ -103,7 +103,7 @@ const NavBar = () => {
       <div className="navbar-end gap-2 md:gap-5">
         <button
           onClick={toggleDarkMode}
-          className="text-2xl p-2 text-white bg-black dark:text-black dark:bg-white rounded-full"
+          className="text-2xl lg:text-3xl p-2 bg-slate-500 bg-opacity-30 text-white dark:text-black rounded-full"
         >
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>

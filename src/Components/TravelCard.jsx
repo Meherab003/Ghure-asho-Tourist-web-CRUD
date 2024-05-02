@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const TravelCard = ({ card }) => {
   return (
     <div
@@ -16,5 +18,9 @@ const TravelCard = ({ card }) => {
     </div>
   );
 };
+
+TravelCard.propTypes = {
+    card: PropTypes.object,
+}
 
 export default TravelCard;
