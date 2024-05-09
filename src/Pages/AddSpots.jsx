@@ -51,6 +51,7 @@ const AddSpots = () => {
             text: "Spot Successfully Added!",
             icon: "success",
           });
+          form.reset();
         }
       });
   };
@@ -62,7 +63,7 @@ const AddSpots = () => {
         </h2>
         <form
           onSubmit={handleAddSpot}
-          className="border rounded-2xl shadow-2xl w-full md:w-11/12 mx-auto bg-green-50 dark:bg-slate-900"
+          className="border rounded-2xl shadow-2xl w-full md:w-11/12 mx-auto bg-green-50 dark:bg-slate-800 dark:border-none"
         >
           <div className="grid gap-3 grid-cols-1 lg:grid-cols-2 p-3 md:p-5">
             {/* input */}
@@ -74,7 +75,7 @@ const AddSpots = () => {
                 type="url"
                 name="photo"
                 placeholder="Enter the photo url"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -87,7 +88,7 @@ const AddSpots = () => {
                 type="text"
                 name="name"
                 placeholder="Enter spot name"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -100,7 +101,7 @@ const AddSpots = () => {
                 type="text"
                 name="country"
                 placeholder="Enter country name"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -113,7 +114,7 @@ const AddSpots = () => {
                 type="text"
                 name="location"
                 placeholder="Enter location"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -126,7 +127,7 @@ const AddSpots = () => {
                 type="text"
                 name="description"
                 placeholder="Enter short description"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -139,7 +140,7 @@ const AddSpots = () => {
                 type="text"
                 name="average"
                 placeholder="Enter average cost"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -152,7 +153,7 @@ const AddSpots = () => {
                 type="text"
                 name="seasonality"
                 placeholder="Enter seasonality"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -165,7 +166,7 @@ const AddSpots = () => {
                 type="text"
                 name="time"
                 placeholder="Enter travel time"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
@@ -178,14 +179,14 @@ const AddSpots = () => {
                 type="text"
                 name="visitor"
                 placeholder="Enter total visitor per year"
-                className="input input-bordered w-full dark:bg-slate-600 dark:text-white"
+                className="input input-bordered w-full dark:bg-slate-700 dark:text-white"
                 required
               />
             </label>
             {/* input */}
           </div>
           <div className="form-control p-3 md:px-5">
-            <button className="btn bg-green-600 text-black border-node dark:border-none">Add</button>
+            <button className="btn bg-green-600 text-black border-node dark:bg-white dark:text-black dark:border-none dark:hover:bg-slate-400 dark:hover:text-white">Add</button>
           </div>
         </form>
       </div>

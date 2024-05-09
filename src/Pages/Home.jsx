@@ -33,8 +33,8 @@ const Home = () => {
         <Banner></Banner>
         <PopularSpots spots={spots}></PopularSpots>
         <AllCountries></AllCountries>
-        <div className="pb-10">
-          <h2 className="text-center mb-3 lg:pb-5 px-5 text-3xl lg:text-5xl font-semibold dark:text-white">
+        <div className="py-10 bg-green-100 dark:bg-slate-700 mb-5">
+          <h2 className="text-center mb-3 lg:py-5 px-5 text-3xl lg:text-5xl font-semibold dark:text-white">
             Chose How You Want To Travel
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-3 md:px-5 lg:px-10 pb-5">

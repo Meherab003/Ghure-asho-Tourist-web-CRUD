@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/touristSpots/:id",
-        element: <TouristSpotsDatils></TouristSpotsDatils>,
+        element: <PrivateRoute><TouristSpotsDatils></TouristSpotsDatils></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/spots/${params.id}`),
       },
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/touristSpots/countries/:countryName",
-        element: <CountrySpots></CountrySpots>,
+        element: <PrivateRoute><CountrySpots></CountrySpots></PrivateRoute>,
         loader:({params}) => fetch(`https://ghure-asho-server-5he4wafv1-meherab-hossain-bhuiyans-projects.vercel.app/touristSpots/countries/${params.countryName}`)
       },
     ],

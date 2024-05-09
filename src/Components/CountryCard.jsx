@@ -8,7 +8,7 @@ const CountryCard = ({ singleCountry }) => {
 
   return (
     <Link to={`/touristSpots/countries/${singleCountry.country}`}
-      className="hero rounded-2xl hover:shadow-xl hover:shadow-slate-600 dark:hover:shadow-slate-800"
+      className="hero rounded-2xl hover:shadow-xl hover:shadow-slate-600 dark:hover:shadow-slate-800 transition duration-500 hover:scale-105"
       style={{
         backgroundImage: `url(${singleCountry.countryImg})`,
       }}

@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { BiWorld } from "react-icons/bi";
-import { FaArrowRight, FaUsers } from "react-icons/fa";
-import { FaBangladeshiTakaSign, FaLocationDot } from "react-icons/fa6";
-import { IoTime } from "react-icons/io5";
-import { TiWeatherPartlySunny } from "react-icons/ti";
+import { FaArrowRight } from "react-icons/fa";
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
+// import { IoTime } from "react-icons/io5";
+// import { TiWeatherPartlySunny } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -15,18 +15,18 @@ const TouristSpotCard = ({ spot }) => {
     photo,
     name,
     country,
-    location,
+    // location,
     description,
     average,
-    seasonality,
-    time,
-    visitor,
+    // seasonality,
+    // time,
+    // visitor,
   } = spot;
   return (
     <div className={`${darkMode && "dark"}`}>
-      <div className="card border card-compact dark:bg-slate-900 bg-base-100 dark:hover:bg-slate-800 shadow-xl">
+      <div className="card border card-compact dark:bg-slate-800 bg-base-100 hover:bg-green-100 dark:hover:bg-slate-700 dark:border-none shadow-xl">
         <figure className="h-64">
-          <img className="object-cover w-full h-full hover:" src={photo} alt="Shoes" />
+          <img className="object-cover w-full h-full transition duration-500 hover:scale-125" src={photo} alt="Shoes" />
         </figure>
         <div className="card-body">
           <div>
@@ -49,26 +49,6 @@ const TouristSpotCard = ({ spot }) => {
             ) : (
               <p className="font-medium text-gray-700 dark:text-white">{description}</p>
             )}
-          </div>
-          <div className="flex-grow dark:text-white">
-            <div className="grid grid-cols-2 font-semibold">
-              <p className="flex items-center gap-2">
-                <FaUsers />
-                <span>{visitor}/year</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoTime />
-                <span>{time}</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <TiWeatherPartlySunny />
-                <span>{seasonality}</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <FaLocationDot />
-                <span>{location}</span>
-              </p>
-            </div>
           </div>
           <div className="card-actions justify-end items-center">
             <p className="text-2xl md:text-4xl text-green-600 flex items-center font-bold mt-5">

@@ -49,7 +49,7 @@ const RatingSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-14">
             {ratingCards.map((ratingCard) => (
               <div key={ratingCard.id}>
-                <div className="bg-slate-900 rounded-2xl hover:bg-slate-200 text-white hover:text-slate-900">
+                <div className="bg-slate-900 rounded-2xl transition duration-500 hover:bg-slate-200 text-white hover:text-slate-900">
                   <div className="flex gap-3 items-center p-3 md:p-5">
                     {/* image */}
                     <div className="avatar">

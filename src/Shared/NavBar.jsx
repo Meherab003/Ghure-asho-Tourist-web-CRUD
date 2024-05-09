@@ -38,32 +38,32 @@ const NavBar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink className="p-1 text-white" to="/">
+        <NavLink className="p-1 text-white hover:text-green-400" to="/">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink className="p-1 text-white" to="/touristSpots">
+        <NavLink className="p-1 text-white hover:text-green-400" to="/touristSpots">
           Tourists Spots
         </NavLink>
       </li>
       <li>
-        <NavLink className="p-1 text-white" to="/addSpots">
+        <NavLink className="p-1 text-white hover:text-green-400" to="/addSpots">
           Add Spots
         </NavLink>
       </li>
       <li>
-        <NavLink className="p-1 text-white" to="/myList">
+        <NavLink className="p-1 text-white hover:text-green-400" to="/myList">
           My List
         </NavLink>
       </li>
     </>
   );
   return (
-    <nav className="navbar bg-gray-900 bg-opacity-70 fixed top-0 text-white z-[5] py-3 md:px-10">
+    <nav className={`navbar bg-gray-900 bg-opacity-70 fixed top-0 text-white z-[5] py-3 md:px-10 ${darkMode && "dark"}`}>
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost pl-0 pr-3 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -103,7 +103,7 @@ const NavBar = () => {
       <div className="navbar-end gap-2 md:gap-5">
         <button
           onClick={toggleDarkMode}
-          className="text-2xl lg:text-3xl p-2 bg-slate-500 bg-opacity-30 text-white dark:text-black rounded-full"
+          className="text-lg lg:text-3xl p-2 bg-slate-900 dark:bg-slate-100 bg-opacity-70 dark:bg-opacity-30 transition duration-500 hover:bg-opacity-90 dark:hover:bg-opacity-90 text-white dark:text-yellow-500 dark:hover:text-yellow-600 rounded-full"
         >
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
@@ -122,14 +122,14 @@ const NavBar = () => {
                   src={user.photoURL}
                   tabIndex={0}
                   role="button"
-                  className="btn btn-circle btn-md bg-green-600 border-none"
+                  className="btn btn-circle btn-sm lg:btn-md bg-green-600 border-none"
                 />
               ) : (
                 <img
                   src="https://i.ibb.co/f0phPhH/icons8-user-96.png"
                   tabIndex={0}
                   role="button"
-                  className="btn btn-circle btn-md bg-green-600 border-none"
+                  className="btn btn-circle btn-sm lg::btn-md bg-green-600 border-none"
                 />
               )}
               <ul

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyList = () => {
-  const { user, darkMode } = useContext(AuthContext);
+  const { user, darkMode, loading } = useContext(AuthContext);
   const [addedSpots, setAddedSpots] = useState([]);
   //   console.log(user.email);
 
@@ -49,6 +49,22 @@ const MyList = () => {
       }
     });
   };
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <span className="loading loading-spinner loading-md lg:loading-lg text-success"></span>
+      </div>
+    );
+  }
+
+  if(addedSpots.length <= 0){
+    return(<div className={`${darkMode && "dark"}`}>
+      <div className="h-screen bg-green-100 flex flex-col items-center justify-center text-center dark:bg-slate-900 dark:text-white gap-10">
+        <h2 className="text-2xl md:text-4xl font-medium">{`You haven't added anything yet`}</h2>
+        <Link to='/addSpots' className="btn bg-green-600 text-slate-900 hover:bg-green-900 hover:text-slate-300 border-none dark:bg-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-300">Start Adding</Link>
+      </div>
+    </div>)
+  }
 
   return (
     <div className={`${darkMode && "dark"}`}>

@@ -19,31 +19,31 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-screen"
+        className="mySwiper h-[50vh] md:h-screen"
       >
         <SwiperSlide>
-          <div className="bg-[url('https://images.unsplash.com/photo-1549300461-11c5b94e8855?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-screen text-2xl md:text-4xl lg:text-8xl">
+          <div className="bg-[url('https://images.unsplash.com/photo-1549300461-11c5b94e8855?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-[50vh] md:h-screen text-2xl md:text-4xl lg:text-8xl">
             <div className="w-full h-full flex items-center justify-center bg-slate-900 bg-opacity-35 text-white">
               Forests And Trees
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('https://images.unsplash.com/photo-1623885213877-731a59a6df1a?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-screen flex text-2xl md:text-4xl lg:text-8xl">
+          <div className="bg-[url('https://images.unsplash.com/photo-1623885213877-731a59a6df1a?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-[50vh] md:h-screen flex text-2xl md:text-4xl lg:text-8xl">
             <div className="w-full h-full flex items-center justify-center bg-slate-900 bg-opacity-35 text-white">
               Sea Beaches
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('https://images.unsplash.com/photo-1642179335770-82d5ffc4b439?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-screen text-2xl md:text-4xl lg:text-8xl">
+          <div className="bg-[url('https://images.unsplash.com/photo-1642179335770-82d5ffc4b439?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-[50vh] md:h-screen text-2xl md:text-4xl lg:text-8xl">
             <div className="w-full h-full flex items-center justify-center bg-slate-900 bg-opacity-35 text-white">
               Lakes
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('https://plus.unsplash.com/premium_photo-1668611366479-cd5d2440d6a8?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-screen text-2xl md:text-4xl lg:text-8xl">
+          <div className="bg-[url('https://plus.unsplash.com/premium_photo-1668611366479-cd5d2440d6a8?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover h-[50vh] md:h-screen text-2xl md:text-4xl lg:text-8xl">
             <div className="w-full h-full flex items-center justify-center bg-slate-900 bg-opacity-35 text-white">
               Mountains
             </div>

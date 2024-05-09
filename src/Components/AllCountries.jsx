@@ -24,7 +24,7 @@ const AllCountries = () => {
   });
 
   return (
-    <div className="mb-16 lg:mb-20 border pt-5 md:pt-10">
+    <div className="border pt-5 md:pt-10">
       <div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-center md:mb-2 lg:mb-4 dark:text-white">
           From Countries like:
